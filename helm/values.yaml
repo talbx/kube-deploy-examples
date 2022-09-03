@@ -1,0 +1,10 @@
+nginx:
+  readinessProbe:
+    enabled: false
+  image:
+    repository: nginx
+    tag: 1.23.1
+  fullNameOverride: nginx-helm
+  replicaCount: 1
+  service:
+    type: ClusterIP

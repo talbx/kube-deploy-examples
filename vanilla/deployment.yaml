@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-vanilla
+  namespace: kube-deploy-examples
+spec:
+  selector:
+    matchLabels:
+      app: nginx-vanilla
+  replicas: 1 
+  template:
+    metadata:
+      labels:
+        app: nginx-vanilla
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.23.1
+        ports:
+        - containerPort: 80
